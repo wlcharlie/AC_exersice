@@ -14,9 +14,6 @@ body {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
   font-size: 1vw;
 }
 
@@ -60,7 +57,7 @@ header a .header-title:hover {
 .bg-image {
   position: absolute;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 .bg-image.one {
