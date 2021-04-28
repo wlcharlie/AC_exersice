@@ -9,7 +9,6 @@ footer {
 }
 
 /* header */
-
 header a .header-title{
   color: #eeeeee!important;
   margin: 35px 0 0 0;
@@ -42,41 +41,7 @@ header a .header-title:hover {
   box-shadow: 5px 10px 0px 0px #eeeeee;
 }
 
-/* bgimage */
 
-.bg-image {
-  position: absolute;
-  z-index: -1;
-  opacity: 0.1;
-}
-
-.bg-image.one {
-  top: 600px;
-  left: 50px;
-}
-
-.bg-image.one img {
-  width: 250px
-}
-
-.bg-image.two {
-  top: 850px;
-  right: 10px;
-}
-
-.bg-image.two img {
-  width: 450px
-}
-
-.bg-image.three {
-  top: -20px;
-  right: 70px;
-}
-
-.bg-image.three img {
-  width: 100px;
-  transform: rotate(-100deg)
-}
 
 /* user */
 h5.section-title{
@@ -156,6 +121,7 @@ p.section-title{
   min-height: 600px;
   min-width: 500px;
   width: 70vw;
+  max-width: 1100px;
   box-shadow: 5px -20px 0 0 #eeeeee;
 }
 
@@ -198,4 +164,40 @@ p.section-title{
   header nav div {
     margin: 1rem 0;
   }
+}
+
+/* bgimage */
+
+.bg-image {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+.bg-image.one {
+  top: 600px;
+  left: 50px;
+}
+
+.bg-image.one img {
+  width: 250px
+}
+
+.bg-image.two {
+  top: 850px;
+  right: 10px;
+}
+
+.bg-image.two img {
+  width: 450px
+}
+
+.bg-image.three {
+  top: -20px;
+  right: 70px;
+}
+
+.bg-image.three img {
+  width: 100px;
+  transform: rotate(-100deg)
 }

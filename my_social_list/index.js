@@ -56,7 +56,7 @@ function dataRender(data) {
 function pageRender() {
   const TOTAL_PAGE = Math.ceil(dataUser.length / USER_PER_PAGE)
   for (let page = 0; page < TOTAL_PAGE; page++) {
-    paginator.innerHTML += `<li class="page-item"><a class="page-link" href="#" data-id="${page + 1}">${page + 1}</a></li>`
+    paginator.innerHTML += `<li class="page-item"><a class="page-link mb-3" href="#" data-id="${page + 1}">${page + 1}</a></li>`
   }
 }
 
