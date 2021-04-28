@@ -3,20 +3,11 @@ body {
   position: relative;
 }
 
-header {
-  margin: 1.2rem 0.5rem;
-  padding: 1.2rem 0;
-  border-bottom: 1px solid #eeeeee;
-}
-
-.wrapper {
-  margin-bottom: 10rem;
-}
-
 footer {
   position: fixed;
   bottom: 0;
-  width: 100%
+  width: 100%;
+  font-size: 1vw;
 }
 
 /* header */
@@ -92,6 +83,7 @@ header a .header-title:hover {
 /* user */
 h5.section-title{
   color: #eeeeee!important;
+  width: 50%;
   margin: 35px 0 0 0;
   padding: 15px 5px;
   border: 1px solid #eeeeee;
@@ -198,3 +190,13 @@ p.section-title{
     margin: 0 1rem!important;
   }
 } 
+
+@media screen and (max-width: 650px) {
+  header nav{
+    flex-direction: column;
+  }
+
+  header nav div {
+    margin: 1rem 0;
+  }
+}

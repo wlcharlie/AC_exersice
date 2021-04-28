@@ -36,7 +36,7 @@ function dataRender(data) {
   let rawHTML = ''
   data.forEach((user) => {
     rawHTML += `
-      <div class=".col mx-1 my-1">
+      <div class=".col mx-1">
         <div class="user-info" data-toggle="modal" data-target="#cardUser">
           <div class="card border-white" style="width: 160px">
             <div class="user-avatar">
