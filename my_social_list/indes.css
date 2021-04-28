@@ -169,3 +169,12 @@ h5.section-title{
   }
 }
 
+@media screen and (max-width: 650px) {
+  header nav{
+    flex-direction: column;
+  }
+
+  header nav div {
+    margin: 1rem 0;
+  }
+}
