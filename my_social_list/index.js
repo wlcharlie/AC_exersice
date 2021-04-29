@@ -13,12 +13,9 @@ const cardEmail = document.querySelector("#card-email");
 const searchBar = document.querySelector('#search-bar')
 const paginator = document.querySelector('#paginator')
 const USER_PER_PAGE = 12
-
 const surprise = [{ id: 000, name: "Surprise", surname: "Meow", email: "pancake@meow.com", gender: "female", birthday: "2019-05-10", region: "TW", avatar: "https://i.imgur.com/5XoWuIYt.jpg" }]
-
-
 const addButton = document.querySelector(".adding")
-const addList = []
+const addList = JSON.parse(localStorage.getItem('listForRoutePage'))
 
 
 axios
@@ -36,7 +33,7 @@ function dataRender(data) {
   let rawHTML = ''
   data.forEach((user) => {
     rawHTML += `
-      <div class=".col mx-1">
+      <div class=".col mx-1 mb-1">
         <div class="user-info" data-toggle="modal" data-target="#cardUser">
           <div class="card border-white" style="width: 160px">
             <div class="user-avatar">
@@ -56,7 +53,7 @@ function dataRender(data) {
 function pageRender() {
   const TOTAL_PAGE = Math.ceil(dataUser.length / USER_PER_PAGE)
   for (let page = 0; page < TOTAL_PAGE; page++) {
-    paginator.innerHTML += `<li class="page-item"><a class="page-link mb-3" href="#" data-id="${page + 1}">${page + 1}</a></li>`
+    paginator.innerHTML += `<li class="page-item"><a class="page-link mb-3" href="#" data-page="${page + 1}">${page + 1}</a></li>`
   }
 }
 
@@ -92,8 +89,6 @@ dataPanel.addEventListener("click", function (event) {
         console.log(error);
       });
   }
-
-
 });
 
 searchBar.addEventListener('keyup', function searchingName() {
@@ -115,10 +110,12 @@ searchBar.addEventListener('keyup', function searchingName() {
 paginator.addEventListener('click', function paginatorGoTo(event) {
   event.preventDefault()
   if (event.target.matches(".page-link")) {
-    let page = event.target.dataset.id
+    let page = event.target.dataset.page
+    let pageItem = document.querySelectorAll('.page-item')
     let pageDataUser = dataUser.slice((page - 1) * USER_PER_PAGE, page * USER_PER_PAGE)
     dataRender(pageDataUser)
-
+    pageItem.forEach(item => item.classList.remove('active'))
+    event.target.parentElement.classList.add('active')
     searchBar.value = ""
   }
 })
@@ -135,10 +132,10 @@ addButton.addEventListener('click', function (event) {
       } else {
         addList.push(response.data)
         localStorage.setItem('listForRoutePage', JSON.stringify(addList))
+        alert('已加入囉! 快去隊伍頁面查看>__<')
       }
     })
     .catch(function (error) {
       console.log(error);
     });
-
 })

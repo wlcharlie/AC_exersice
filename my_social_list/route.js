@@ -9,8 +9,7 @@ const cardGender = document.querySelector("#card-gender");
 const cardBirth = document.querySelector("#card-birth");
 const cardRegion = document.querySelector("#card-region");
 const cardEmail = document.querySelector("#card-email");
-
-const delButton = document.querySelector(".deleting")
+const delButton = document.querySelector(".deleting");
 
 const getList = JSON.parse(localStorage.getItem('listForRoutePage'))
 
@@ -34,7 +33,6 @@ function dataRender(data) {
   });
   dataPanel.innerHTML = rawHTML
 }
-
 
 dataPanel.addEventListener("click", function (event) {
   const target = event.target;
@@ -65,9 +63,9 @@ delButton.addEventListener('click', function (event) {
   let userIndexInList = getList.findIndex((a) => `${a.id}` === userId)
 
   getList.splice(userIndexInList, 1)
+  alert(`您移除了一位隊友...`)
   dataRender(getList)
   localStorage.setItem('listForRoutePage', JSON.stringify(getList))
-
 })
 
 dataRender(getList)

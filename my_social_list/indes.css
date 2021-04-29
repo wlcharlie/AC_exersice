@@ -13,8 +13,13 @@ body {
   margin: 0 0 5rem 0;
 }
 
+.active {
+  filter: brightness(2);
+  text-decoration: underline;
+}
+
 footer {
-  font-size: 1vw;
+  font-size: 0.5vw;
 }
 
 /* header */
@@ -62,7 +67,7 @@ header a .header-title:hover {
 
 /* user */
 #dataPanel {
-  min-height: 770px;
+  min-height: 700px;
 }
 
 h5.section-title{
